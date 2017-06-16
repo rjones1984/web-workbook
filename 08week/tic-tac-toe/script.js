@@ -22,25 +22,41 @@ $('div').click(function () {
       player = 1;
       count++;
     }
+    checkForWin();
     // the code below enables a win by player X
-  } else if ($('#box0').hasClass('X-taken') && $('#box1').hasClass('X-taken') && $('#box2').hasClass('X-taken') || $('#box3').hasClass('X-taken') && $('#box4').hasClass('X-taken') && $('#box5').hasClass('X-taken') || $('#box6').hasClass('X-taken') && $('#box7').hasClass('X-taken') && $('#box8').hasClass('X-taken') || $('#box0').hasClass('X-taken') && $('#box3').hasClass('X-taken') && $('#box6').hasClass('X-taken') || $('#box0').hasClass('X-taken') && $('#box4').hasClass('X-taken') && $('#box8').hasClass('X-taken') ||
-  $('#box1').hasClass('X-taken') && $('#box4').hasClass('X-taken') && $('#box7').hasClass('X-taken') ||
-  $('#box2').hasClass('X-taken') && $('#box4').hasClass('X-taken') && $('#box6').hasClass('X-taken') ||
-  $('#box2').hasClass('X-taken') && $('#box5').hasClass('X-taken') && $('#box8').hasClass('X-taken')) {
-    xWinner();
-    // the code below enables a win by player O
-  } else if  ($('#box0').hasClass('O-taken') && $('#box1').hasClass('O-taken') && $('#box2').hasClass('O-taken') || $('#box3').hasClass('O-taken') && $('#box4').hasClass('O-taken') && $('#box5').hasClass('O-taken') || $('#box6').hasClass('O-taken') && $('#box7').hasClass('O-taken') && $('#box8').hasClass('O-taken') || $('#box0').hasClass('O-taken') && $('#box3').hasClass('O-taken') && $('#box6').hasClass('O-taken') || $('#box0').hasClass('O-taken') && $('#box4').hasClass('O-taken') && $('#box8').hasClass('O-taken') ||
-  $('#box1').hasClass('O-taken') && $('#box4').hasClass('O-taken') && $('#box7').hasClass('O-taken') ||
-  $('#box2').hasClass('O-taken') && $('#box4').hasClass('O-taken') && $('#box6').hasClass('O-taken') ||
-  $('#box2').hasClass('O-taken') && $('#box5').hasClass('O-taken') && $('#box8').hasClass('O-taken')) {
-    oWinner();
-    // the code below allows a tie message if no winner
-  } else if (count === 9) {
-    noWinner();
-    console.log('no winners');
   }
 });
 }
+
+// i am having hella trouble getting this function to work at all, mainly the .each function seems to keep coming up undefined.
+function checkForWin() {
+var wins = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+];
+
+var playersMarker = player === 1 ? 'X' : 'O'; // dynamic based on user's turn
+
+
+var all = $('.board', 'div ') + playersMarker;
+
+var coords = []; // create array that keeps track of X and O coordinates
+  console.log(coords);
+
+$(all).each(function(i) {
+  coords.push(Number($(this).attr('data-cell')));
+
+ });
+}
+
+
+
 // the code below resets the game
 function resetGame() {
   $('button').click(function () {
