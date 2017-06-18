@@ -5,11 +5,18 @@ $(document).ready(function() {
   // code plan follows:
 
 
-  // we want the the top ring in the stack to be the only moveable one
+// we want the the top ring in the stack to be the only moveable one
   var block = $('[data-block]');
   var stack = $('[data-stack]');
   var moveable = $('[data-block]:first-child');
   moveable = moveable.addClass('moveable');
+  var clickMoves = 0;
+
+// the function below add 1 to the move counter
+function countMove() {
+  clickMoves++;
+  $('.movecount').text('Numero de movimientos: ' + clickMoves);
+}
 
 // this code makes objects draggable
 function makeDraggable() {
@@ -36,6 +43,7 @@ function makeDraggable() {
           //stop.
 // if the values are correct (see function comments) allow the ring to be dropped in the stack
         ui.draggable.detach().prependTo(tower);
+        countMove();
         resetMoveable ();
 
       } else {
