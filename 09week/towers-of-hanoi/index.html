@@ -4,9 +4,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Towers of Hanoi</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <h1>Los Torres de Hanoi</h1>
+  <div class="page-wrapper">
+  <header>
+    <div class="main-heading">
+      <div class="title-and-movecount">
+        <h1>Los Torres de Hanoi</h1>
+        <div class="movecount">Numero de movimientos: 0</div>
+      </div>
+      <div class="how-to-play">
+        <i class="fa fa-question-circle-o" aria-hidden="true" style="font-size: 72px;"></i>
+      </div>
+      <div class="rules">
+        <p><strong>Reglas del Juego:</strong> Hay que mover todos los bloques a un otro estaque, una pieza por vez, sin poner una mas grande arriba de una mas pequeña. Minimo movimientos: 15. Suerte!</p>
+      </div>
+    </div>
+  </header>
   <div class="container">
     <div class="tower" data-stack="1">
       <div data-block="25"></div>
@@ -20,6 +35,7 @@
   </div>
   </div>
   <div id="announce-game-won"></div>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script
   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"

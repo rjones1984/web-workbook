@@ -1,13 +1,58 @@
 
-h1 {
-  text-align: center;
+
+.page-wrapper {
+  margin: 0 30%;
+  font-family: helvetica, sans-serif;
 }
+
+
+.main-heading {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.title-and-movecount {
+  display: flex;
+  flex-direction: column;
+}
+
+.movecount {
+  font-size: 1.5em;
+}
+
+.how-to-play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 80px;
+  width: 80px;
+  background-color: violet;
+  border-radius: 5px;
+  color: #333;
+  position: relative;
+}
+
+.rules {
+  background: lightblue;
+  padding: .1em 1.1em;
+  border-radius: 5px;
+  position: absolute;
+  top: 125px;
+  max-width: 400px;
+}
+
 
 .container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 0 30%;
+  position: relative;
+  /*top: -124px;*/
+  z-index: -1;
 }
 
 [data-stack] {

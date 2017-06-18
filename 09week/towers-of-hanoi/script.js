@@ -4,12 +4,30 @@ $(document).ready(function() {
 
   // code plan follows:
 
-
-  // we want the the top ring in the stack to be the only moveable one
   var block = $('[data-block]');
   var stack = $('[data-stack]');
+  // we want the the top ring in the stack to be the only moveable one
   var moveable = $('[data-block]:first-child');
   moveable = moveable.addClass('moveable');
+// this variable holds number of moves
+  var clickMoves = 0;
+
+// function howToPlay() {
+//   $('.rules').hide();
+//
+//   $('.how-to-play').click(function() {
+//     $('.rules').slideToggle(150);
+//   });
+//
+// }
+//
+// howToPlay();
+
+  // the function below add 1 to the move counter
+function countMove() {
+  clickMoves++;
+  $('.movecount').text('Numero de movimientos: ' + clickMoves);
+}
 
 // this code makes objects draggable
 function makeDraggable() {
@@ -36,7 +54,9 @@ function makeDraggable() {
           //stop.
 // if the values are correct (see function comments) allow the ring to be dropped in the stack
         ui.draggable.detach().prependTo(tower);
+        countMove();
         resetMoveable ();
+
 
       } else {
         console.log('bananas');
@@ -67,7 +87,6 @@ function resetMoveable() {
   makeDroppable();
 }
 
-  // without putting a smaller ring on top of a larger one
   // make sure when an element is dragged, it appends to new div, becoming first-child
   // this code changes the first child to current top item
   // when the game has been won delcare a winner
