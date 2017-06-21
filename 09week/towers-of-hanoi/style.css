@@ -1,8 +1,13 @@
+body {
+  font-family: helvetica, sans-serif;
+}
+
+
 .page-wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 0 30%;
+  margin: 0 10%;
 }
 
 
@@ -12,21 +17,77 @@
   align-items: flex-end;
 }
 
+h1 {
+  font-family: 'Bungee';
+  margin: 0;
+}
+
+h4 {
+  margin: 0 0 2% 0;
+}
+
 .title-moves {
+  display: flex;
   flex-direction: column;
 }
 
-.rules-button {
-  height: 4em;
-  width: 4em;
-  background-color: violet;
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 45%;
 }
+
+.rules-button {
+  margin: 0 3%;
+}
+
+.language-button {
+  margin: 0 3%;
+}
+
+.reset-button {
+  margin: 0 3%;
+}
+
+.reset-button {
+  height: 5em;
+  width: 5em;
+  background-color: orange;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.rules-button {
+  height: 5em;
+  width: 5em;
+  background-color: violet;
+  text-align: center;
+  border-radius: 5px;
+  position: relative;
+}
+
+.language-button {
+  height: 5em;
+  width: 5em;
+  background-color: chartreuse;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.rules {
+  position: absolute;
+  top: 118px;
+  max-width: 400px;
+  background-color: lightpink;
+}
+
 
 
 .container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   /*margin: 0 30%;*/
 }
 
@@ -35,10 +96,10 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  height: 500px;
-  min-width: 100px;
-  background-color: mistyrose;
-  margin: 25px;
+  height: 400px;
+  min-width: 5em;
+  background-color: #999;
+  margin: 1% 5%;
 }
 
 [data-block] {
@@ -46,30 +107,86 @@
 }
 
 [data-block="25"] {
-  width: 25px;
-  background-color: blue;
-  border-radius: 10px;
+  width: 2em;
+  background-color: #666;
+  border-radius: 5px;
 }
 
 [data-block="50"] {
-  width: 50px;
-  background-color: green;
-  border-radius: 10px;
+  width: 3em;
+  background-color: #444;
+  border-radius: 5px;
 }
 
 [data-block="75"] {
-  width: 75px;
-  background-color: red;
-  border-radius: 10px;
+  width: 4em;
+  background-color:#333;
+  border-radius: 5px;
 }
 
 [data-block="100"] {
-  width: 100px;
-  background-color: yellow;
-  border-radius: 10px;
+  width: 5em;
+  background-color: #111;
+  border-radius: 5px;
 }
 
 #announce-game-won {
   font-size: 50px;
   text-align: center;
+}
+
+@media (max-width: 983px) {
+  .page-wrapper {
+    margin: 0;
+  }
+
+  .main-heading {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .title-moves {
+    align-items: center;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .rules-button {
+    margin: 0 5%;
+  }
+
+  .rules {
+    top: 201px;
+  }
+
+  .language-button {
+    margin: 0 5%;
+  }
+
+  .reset-button {
+    margin: 0 5%;
+  }
+
+  rules {
+    top: 225px;
+  }
+}
+
+@media (max-width: 322px) {
+  h1 {
+    line-height: 1;
+  }
+
+  .rules {
+    top: 232px;
+  }
+
 }

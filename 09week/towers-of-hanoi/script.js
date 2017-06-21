@@ -12,6 +12,17 @@ $(document).ready(function() {
   moveable = moveable.addClass('moveable');
   var clickMoves = 0;
 
+function howToPlay() {
+  $('.rules').hide();
+
+  $('.rules-button').click(function() {
+    $('.rules').slideToggle(150);
+  });
+
+}
+
+howToPlay();
+
 // the function below add 1 to the move counter
 function countMove() {
   clickMoves++;
@@ -74,6 +85,16 @@ function resetMoveable() {
   makeDraggable();
   makeDroppable();
 }
+
+function resetGame() {
+  $('.reset-button').click(function() {
+    clickMoves = 0;
+    $('.movecount').text('Numero de movimientos: ' + clickMoves);
+    $('data-stack').append($('data-block'));
+  });
+}
+
+resetGame();
 
   // without putting a smaller ring on top of a larger one
   // make sure when an element is dragged, it appends to new div, becoming first-child
