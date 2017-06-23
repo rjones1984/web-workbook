@@ -80,17 +80,18 @@ function checkForDroppability(disk, tower) {
 // reset the first ring in a stack to draggable
 function resetMoveable() {
   moveable = $('[data-block]:first-child');
-  // $('[data-block]').removeClass('moveable');
   moveable.addClass('moveable');
   makeDraggable();
   makeDroppable();
 }
 
+// clear the board and moves=0
 function resetGame() {
   $('.reset-button').click(function() {
     clickMoves = 0;
     $('.movecount').text('Numero de movimientos: ' + clickMoves);
-    $('data-stack').append($('data-block'));
+    block.prependTo('.home-stack');
+
   });
 }
 
