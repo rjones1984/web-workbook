@@ -38,21 +38,10 @@ h4 {
   width: 45%;
 }
 
-.rules-button {
-  margin: 0 3%;
-}
-
-.language-button {
-  margin: 0 3%;
-}
-
-.reset-button {
-  margin: 0 3%;
-}
-
 .reset-button {
   height: 5em;
   width: 5em;
+  margin: 0 3%;
   background-color: orange;
   text-align: center;
   border-radius: 5px;
@@ -61,6 +50,7 @@ h4 {
 .rules-button {
   height: 5em;
   width: 5em;
+  margin: 0 3%;
   background-color: violet;
   text-align: center;
   border-radius: 5px;
@@ -70,12 +60,13 @@ h4 {
 .language-button {
   height: 5em;
   width: 5em;
+  margin: 0 3%;
   background-color: chartreuse;
   text-align: center;
   border-radius: 5px;
 }
 
-.rules {
+.rules-spanish {
   position: absolute;
   top: 118px;
   max-width: 400px;

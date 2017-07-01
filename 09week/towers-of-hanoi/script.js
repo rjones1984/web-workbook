@@ -13,12 +13,11 @@ $(document).ready(function() {
   var clickMoves = 0;
 
 function howToPlay() {
-  $('.rules').hide();
+  $('.rules-spanish').hide();
 
   $('.rules-button').click(function() {
-    $('.rules').slideToggle(150);
+    $('.rules-spanish').slideToggle(150);
   });
-
 }
 
 howToPlay();
@@ -79,24 +78,20 @@ function checkForDroppability(disk, tower) {
 
 // reset the first ring in a stack to draggable
 function resetMoveable() {
+  block.removeClass('moveable');
   moveable = $('[data-block]:first-child');
   moveable.addClass('moveable');
   makeDraggable();
   makeDroppable();
 }
 
-// clear the board and moves=0
+// reset the board and moves=0
 function resetGame() {
-    $('.reset-button').click(function() {
-    clickMoves = 0;
-    $('.movecount').text('Numero de movimientos: ' + clickMoves);
-    block.prependTo('.home-stack');
-    $(".tower").children().each(function(i) {
-
-    if(i!==0){ // check the first index and add
-      $(this).removeClass("moveable" + (i+1));
-    }
-  });
+  $('.reset-button').click(function() {
+  clickMoves = 0;
+  $('.movecount').text('Numero de movimientos: ' + clickMoves);
+  block.prependTo('.home-stack');
+  resetMoveable();
 
   });
 }
