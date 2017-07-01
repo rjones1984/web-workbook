@@ -87,10 +87,16 @@ function resetMoveable() {
 
 // clear the board and moves=0
 function resetGame() {
-  $('.reset-button').click(function() {
+    $('.reset-button').click(function() {
     clickMoves = 0;
     $('.movecount').text('Numero de movimientos: ' + clickMoves);
     block.prependTo('.home-stack');
+    $(".tower").children().each(function(i) {
+
+    if(i!==0){ // check the first index and add
+      $(this).removeClass("moveable" + (i+1));
+    }
+  });
 
   });
 }
